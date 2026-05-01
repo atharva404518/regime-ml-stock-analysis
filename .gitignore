@@ -23,6 +23,7 @@ Thumbs.db
 
 # Other
 *.png
+!docs/images/*.png
 *.jpg
 *.jpeg
 *.ipynb_checkpoints/
