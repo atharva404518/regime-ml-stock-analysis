@@ -1,0 +1,177 @@
+[
+  {
+    "ticker": "KO",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "logistic",
+      "lstm"
+    ],
+    "dataset_version": "1",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": true,
+    "folds": 22,
+    "timestamp": "2026-04-14T20:34:14.968580+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "logistic",
+      "lstm"
+    ],
+    "dataset_version": "1",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": true,
+    "folds": 22,
+    "timestamp": "2026-04-15T16:44:44.190272+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "logistic",
+      "lstm"
+    ],
+    "dataset_version": "3",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": true,
+    "folds": 22,
+    "timestamp": "2026-04-15T19:39:34.874750+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "logistic",
+      "lstm"
+    ],
+    "dataset_version": "4",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": true,
+    "folds": 22,
+    "timestamp": "2026-04-15T19:52:58.076372+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "logistic",
+      "lstm"
+    ],
+    "dataset_version": "na",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": true,
+    "folds": 22,
+    "timestamp": "2026-04-15T20:06:36.665389+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "lstm"
+    ],
+    "dataset_version": "na",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": false,
+    "folds": 0,
+    "timestamp": "2026-04-15T20:17:52.160332+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "lstm"
+    ],
+    "dataset_version": "na",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": false,
+    "folds": 0,
+    "timestamp": "2026-04-16T02:41:32.736474+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "lstm"
+    ],
+    "dataset_version": "na",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": false,
+    "folds": 0,
+    "timestamp": "2026-04-30T07:55:37.008447+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "lstm"
+    ],
+    "dataset_version": "na",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": true,
+    "folds": 22,
+    "timestamp": "2026-04-30T08:04:03.472335+00:00"
+  },
+  {
+    "ticker": "SPY",
+    "start": "2000-01-01",
+    "end": "2026-01-01",
+    "models_used": [
+      "linear",
+      "ridge",
+      "random_forest",
+      "lstm"
+    ],
+    "dataset_version": "na",
+    "data_source": "api",
+    "synthetic_flag": false,
+    "use_walk_forward": false,
+    "folds": 0,
+    "timestamp": "2026-05-01T05:55:41.863214+00:00"
+  }
+]

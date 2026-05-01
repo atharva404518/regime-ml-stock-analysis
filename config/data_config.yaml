@@ -1,0 +1,21 @@
+# Data ingestion defaults
+source_priority:
+  - tiingo
+  - local
+  - synthetic
+
+validation:
+  missing_threshold: 0.20
+  enforce_continuity: false
+
+tiingo:
+  timeout: 30
+  max_retries: 5
+  base_delay: 3
+
+local:
+  raw_dir: data/datasets/raw
+
+versioning:
+  versions_dir: data/datasets/versions
+  metadata_file: data/datasets/metadata.json
