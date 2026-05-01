@@ -12,6 +12,7 @@ venv/
 data/datasets/
 data/local/
 experiments/results/
+experiments/metadata/
 
 # Environment variables
 .env
@@ -19,3 +20,10 @@ experiments/results/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Other
+*.png
+*.jpg
+*.jpeg
+*.ipynb_checkpoints/
+
