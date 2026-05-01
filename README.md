@@ -74,10 +74,26 @@ Models are evaluated using both prediction and trading metrics:
 
 ## Project Structure
 
-project/ │ ├── main.py ├── config.py ├── requirements.txt ├── README.md │ ├──
-data/ │ ├── loader.py │ ├── sources/ │ ├── datasets/ │ ├── features/ ├──
-regimes/ ├── models/ ├── evaluation/ ├── backtesting/ ├── experiments/ ├──
-utils/
+```text
+project/
+├── main.py
+├── config.py
+├── requirements.txt
+├── README.md
+│
+├── data/
+│   ├── loader.py
+│   ├── sources/
+│   ├── datasets/
+│
+├── features/
+├── regimes/
+├── models/
+├── evaluation/
+├── backtesting/
+├── experiments/
+├── utils/
+```
 
 ---
 
@@ -85,9 +101,9 @@ utils/
 
 Install dependencies:
 
-````bash
+```bash
 pip install -r requirements.txt
-
+```
 ## Usage
 
 Run the CLI with default full analysis:
@@ -120,85 +136,26 @@ python main.py \
 
 ---
 
-## Example Runs
-
-### Run Single Model (Ridge)
-
-```bash
-python main.py --ticker SPY --model ridge --data_mode tiingo
-```
-
-### Run All Models with Full Analysis
-
-```bash
-python main.py --ticker SPY --model all --analysis_mode auto --advanced_analysis
-```
-
-### Run with Walk-Forward Validation
-
-```bash
-python main.py \
-  --ticker SPY \
-  --model all \
-  --use_walk_forward \
-  --analysis_mode auto
-```
-
----
 
 ## Methodology Overview
 
-### 1. Data Processing
-
-Historical price data is collected and cleaned. Daily returns are computed and
-missing values are removed.
-
-### 2. Feature Engineering
-
-Features include lagged returns and rolling statistics such as mean and
-volatility. Only past data is used to prevent lookahead bias.
-
-### 3. Regime Detection
-
-Market regimes are defined using:
-
-- Trend: Moving average relationships
-- Volatility: Rolling standard deviation
-- Crash detection: Extreme negative returns
-
-### 4. Model Training
-
-Models are trained using time-series-aware splits or walk-forward validation.
-
-### 5. Prediction to Signal Conversion
-
-Positive prediction leads to a long position, negative prediction leads to a
-short position, and very small signals are filtered using an epsilon threshold.
-Positions are shifted forward by one timestep to eliminate lookahead bias.
-
-### 6. Backtesting
-
-Strategies are simulated using non-overlapping holding periods, transaction
-costs, and equity curve tracking.
-
-### 7. Evaluation Metrics
-
-- RMSE (prediction error)
-- Directional Accuracy
-- Sharpe Ratio (risk-adjusted return)
-- Information Coefficient (IC)
-- Cumulative Returns
-- Regime Stability
+The pipeline begins with historical price data ingestion followed by preprocessing and feature engineering. Market regimes are defined using trend and volatility indicators. Models are trained using time-series-aware validation, and predictions are converted into trading signals. A backtesting engine simulates trading performance, and results are evaluated using both statistical and financial metrics.
 
 ---
 
-## Results Interpretation
+## Key Results
 
-Models typically achieve approximately 55–59% directional accuracy. The
-Information Coefficient indicates the presence of weak predictive signals.
-However, the best Sharpe ratio (approximately 0.29) is lower than a random
-benchmark (approximately 0.76), indicating limited economic viability of these
-predictions.
+| Model             | RMSE   | Sharpe | Directional Accuracy |
+| ----------------- | ------ | ------ | -------------------- |
+| Ridge             | 0.0227 | 0.29   | 56.0%                |
+| Linear Regression | 0.0227 | 0.25   | 55.2%                |
+| Random Forest     | 0.0224 | 0.58   | 58.9%                |
+| LSTM              | 0.0476 | -0.10  | 51.5%                |
+
+## Insight
+
+Despite moderate predictive accuracy, no model outperformed a random strategy on
+a risk-adjusted basis, supporting weak-form market efficiency.
 
 ---
 
@@ -213,12 +170,16 @@ predictions.
 
 ---
 
-## Key Insights
+## Sample Results
 
-Linear models perform competitively with more complex models. LSTM does not
-guarantee better performance on financial time-series data. Predictive signals
-tend to degrade when translated into trading strategies. Overall, the market
-exhibits characteristics consistent with weak-form efficiency.
+![Equity Curve](docs/images/equity_curve.png)
+![Regime Analysis](docs/images/regime_plot.png)
+
+---
+
+## Research Paper
+
+Full report available here: [View Paper](docs/paper.pdf)
 
 ---
 
